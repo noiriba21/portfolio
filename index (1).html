@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Azrin Noyriba | Web Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+:root{color-scheme:light;--bg:#fde6ee;--card:#fff8fa;--ink:#3a1f2b;--mute:#7a5563;--line:#f3d5df;--acc:#c2467a;--acc2:#f4a8c4;--r:14px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Instrument Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.15}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:28px}
+.btn{display:inline-block;padding:11px 20px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid var(--ink);cursor:pointer;background:none;color:var(--ink);font-size:1rem}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--acc2);outline-offset:2px}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-family:'Bricolage Grotesque';font-weight:800;font-size:1.2rem;text-decoration:none}
+.links{display:flex;gap:22px;list-style:none;padding:0}
+.links a{text-decoration:none;color:var(--mute);font-weight:500}
+.links a:hover{color:var(--acc)}
+#menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 12px;font-size:1.1rem}
+@media(max-width:760px){
+#menu{display:block}
+.links{display:none;position:absolute;top:62px;left:0;right:0;background:var(--bg);flex-direction:column;padding:16px 20px;border-bottom:1px solid var(--line)}
+.links.open{display:flex}}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:64px 0}
+@media(max-width:760px){.hero{grid-template-columns:1fr;text-align:center}.hero .row{justify-content:center}.photo{order:-1;margin:auto}}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);margin:8px 0 14px}
+.role{color:var(--acc);font-weight:600;font-size:1.15rem}
+.hero p{color:var(--mute);max-width:520px}
+@media(max-width:760px){.hero p{margin:auto}}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.photo{width:min(300px,70vw);aspect-ratio:1;border-radius:50% 50% 50% 14%;background:var(--card);border:3px solid var(--acc);overflow:hidden;display:grid;place-items:center}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.soc a{width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:var(--card)}
+.soc a:hover{border-color:var(--acc);color:var(--acc)}
+.soc svg{width:20px;height:20px;fill:currentColor}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.about p+p{margin-top:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{border:1px solid var(--line);background:var(--card);padding:4px 12px;border-radius:99px;font-size:.92rem}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.box h3{margin-bottom:14px;font-size:1.2rem}
+.sk{margin-bottom:12px}
+.sk div{display:flex;justify-content:space-between;font-size:.93rem;margin-bottom:4px}
+.bar{height:8px;background:var(--line);border-radius:9px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2));border-radius:9px}
+.tl{border-left:3px solid var(--acc);padding-left:20px;display:grid;gap:22px}
+.tl h3{font-size:1.1rem}
+.tl small{color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.pc img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;display:block}
+.pc div{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pc p{color:var(--mute);font-size:.95rem;flex:1}
+.pc .btn{align-self:flex-start;padding:8px 16px}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.contact a{text-decoration:none}
+.contact .box:hover{border-color:var(--acc)}
+.contact b{display:block;color:var(--mute);font-weight:500;font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--mute);font-size:.92rem}
+#detail{display:none;padding:48px 0}
+#detail .shot{width:100%;border-radius:var(--r);border:1px solid var(--line);margin:18px 0}
+#detail h3{margin:26px 0 8px}
+#detail ul{padding-left:20px}
+body.d #home{display:none}body.d #detail{display:block}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top">Azrin Noyriba</a>
+<button id="menu" aria-label="Open menu">&#9776;</button>
+<ul class="links" id="links">
+<li><a href="#top">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li><li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li>
+</ul></nav></div></header>
+
+<main id="home">
+<div class="wrap" id="top"><div class="hero">
+<div>
+<p class="role">Full Stack Developer &amp; Cybersecurity Specialist</p>
+<h1>Hi, I'm Azrin Noyriba.</h1>
+<p>I build fast, secure and responsive web apps with Next.js, React and MongoDB, and I care about protecting them with strong security practices.</p>
+<div class="row">
+<a class="btn p" href="resume.pdf" download>Download Resume</a>
+<a class="btn" href="#projects">See my work</a>
+</div>
+<div class="row soc" aria-label="Social links">
+<a href="https://github.com/noiriba21" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.500.1-3.100 0 0 1-.3 3.200 1.200a11 11 0 0 1 5.800 0c2.200-1.500 3.200-1.200 3.200-1.200.6 1.600.2 2.800.1 3.100.8.800 1.200 1.800 1.200 3.100 0 4.400-2.700 5.400-5.300 5.700.4.400.8 1.100.8 2.200v3.200c0 .3.200.7.800.6A11.500 11.500 0 0 0 12 .5z"/></svg></a>
+<a href="https://www.linkedin.com/in/azrin-noyriba-169938417" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.500 9.500h3.800v1.600c.5-1 1.900-1.900 3.900-1.900 4 0 4.800 2.600 4.800 6V21h-4v-5c0-1.300 0-3-1.900-3s-2.100 1.400-2.100 2.900V21h-4z"/></svg></a>
+<a href="mailto:azrinnoiriba2004@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.500L4.500 7v1.300L12 14l7.500-5.700V7z"/></svg></a>
+</div>
+</div>
+<div class="photo"><!-- Replace photo.jpg with your professional photo -->
+<img src="photo.jpg" alt="Azrin Noyriba" onerror="this.replaceWith(Object.assign(document.createElement('b'),{textContent:'AN',style:'font:800 4rem Bricolage Grotesque,sans-serif;color:var(--acc)'}))">
+</div>
+</div></div>
+
+<section id="about"><div class="wrap"><h2>About me</h2>
+<div class="about">
+<div>
+<p>I studied Political Science (BSS) at Chittagong Govt Women College, and my curiosity about technology led me into programming. My programming journey started with curiosity: I wanted to know how the websites I use every day actually work. I began with HTML and CSS, then moved to JavaScript and React, and now I build full stack apps with Next.js, authentication and databases. I also study cybersecurity, so I think about safe login, data protection and common attacks from the first line of code.</p>
+<p>I enjoy work where design and logic meet: building clean interfaces, connecting them to real data, and making them work well on every screen. Debugging a stubborn problem and finally fixing it is my favorite feeling.</p>
+</div>
+<div>
+<p>Outside programming, I like to learn new things, spend time with family and friends, and explore creative hobbies. I am patient, curious and always ready to ask questions when I am stuck.</p>
+<div class="chips"><span>Cybersecurity</span><span>Analytical thinking</span><span>Problem solving</span><span>Teamwork</span><span>Quick learner</span><span>Clean UI</span><span>Reading</span><span>Creativity</span></div>
+</div></div></div></section>
+
+<section id="skills"><div class="wrap"><h2>Skills</h2>
+<div class="skills" id="skillBox"></div></div></section>
+
+<section id="education"><div class="wrap"><h2>Education</h2>
+<div class="tl">
+<div><h3>B.S.S. (Honours) in Political Science</h3><p>Chittagong Government Women's College (National University), Chattogram</p><small>2nd year, ongoing. Highest overall marks in 1st year departmental internal assessments (2026)</small></div>
+<div><h3>Higher Secondary Certificate (HSC), Science</h3><p>Bawa College, Chattogram</p><small>GPA 4.08 / 5.00</small></div>
+<div><h3>Secondary School Certificate (SSC), Science</h3><p>Yakub Ali Girls High School, Chattogram</p><small>GPA 5.00 / 5.00</small></div>
+<div><h3>Complete Web Development Course</h3><p>Programming Hero: 12-milestone full-stack curriculum</p><small>Ongoing</small></div>
+</div></div></section>
+
+<section id="experience"><div class="wrap"><h2>Experience</h2>
+<div class="tl">
+<div><h3>Web development projects</h3><p>Built full stack apps with Next.js, BetterAuth and MongoDB Atlas, deployed on Vercel.</p><small>2026</small></div>
+</div></div></section>
+
+<section id="projects"><div class="wrap"><h2>Projects</h2>
+<p style="color:var(--mute);margin:-14px 0 22px">Projects from my GitHub appear here automatically.</p>
+<div class="grid" id="projGrid"></div></div></section>
+
+<section id="contact"><div class="wrap"><h2>Contact</h2>
+<div class="contact">
+<a class="box" href="mailto:azrinnoiriba2004@gmail.com"><b>Email</b>azrinnoiriba2004@gmail.com</a>
+<a class="box" href="tel:+8801521224430"><b>Phone</b>01521224430</a>
+<a class="box" href="https://wa.me/8801521224430" target="_blank" rel="noopener"><b>WhatsApp</b>Message me on WhatsApp</a>
+</div></div></section>
+</main>
+
+<main id="detail"><div class="wrap" id="detailBox"></div></main>
+<footer><div class="wrap">&copy; 2026 Azrin Noyriba. Built with HTML, CSS and JavaScript.</div></footer>
+
+<script>
+const shot=(t,c)=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><rect width="800" height="500" fill="${c}"/><rect x="60" y="70" width="680" height="40" rx="8" fill="#fff" opacity=".25"/><rect x="60" y="140" width="320" height="260" rx="12" fill="#fff" opacity=".2"/><rect x="410" y="140" width="330" height="120" rx="12" fill="#fff" opacity=".2"/><rect x="410" y="280" width="330" height="120" rx="12" fill="#fff" opacity=".2"/><text x="400" y="450" font-family="sans-serif" font-size="30" fill="#fff" text-anchor="middle">${t}</text></svg>`);
+const USER='noiriba21',SKIP=['portfolio',USER+'.github.io'];
+const COL=['#c2467a','#d6618f','#e07aa3','#b83a6e','#e58fb0'];
+// Optional: add details for a repo by its exact GitHub name.
+const OVR={'bazar-dor':{name:'Bazar Dor',stack:['Next.js','TypeScript','Tailwind CSS','BetterAuth','MongoDB Atlas','Vercel'],
+desc:'Bazar Dor lets people check daily prices of market products, see which prices went up or down, browse by category and sort by price. Logged-in users can open product details and update their profile.',
+live:'https://bazar-dor-et8s.vercel.app',
+ch:['Parsing and sorting Bengali-digit price values correctly.','Protecting the dynamic product route (/product/[slug]) with Better Auth.','Fixing environment variables on Vercel so login worked live.'],
+fu:['Price history charts for each product.','Price alerts and a favorites list.','English and Bangla language switch.']},
+'dev-stack-builder':{name:'DevStack Builder',stack:['React','Tailwind CSS','Vercel'],
+desc:'An interactive single-page app where developers explore and configure modern web development stacks. Built as modular React components with a clean responsive Tailwind CSS interface and continuous deployment on Vercel.',
+live:'https://dev-stack-builder-beige.vercel.app',
+ch:['Designing modular components that stay reusable as stacks grow.','Keeping the interface responsive on every screen size.','Setting up continuous deployment from GitHub to Vercel.'],
+fu:['Save and share custom stacks.','More technologies and comparison info.','User accounts to keep favorite stacks.']}};
+let P=[];
+const pretty=n=>n.replace(/[-_]/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+// Live site preview image (like Vercel dashboard). If no live link, GitHub card image is used.
+const shotUrl=(live,name)=>live?'https://s0.wp.com/mshots/v1/'+encodeURIComponent(live)+'?w=900&h=560':'https://opengraph.githubassets.com/1/'+USER+'/'+name;
+function build(r,i){const o=OVR[r.name]||{};
+ return {id:'gh-'+r.name,name:o.name||pretty(r.name),
+ img:o.img||shotUrl(o.live!==undefined?o.live:r.homepage,r.name),fb:shot(pretty(r.name),COL[i%5]),
+ short:r.description||'A project built by Azrin Noyriba.',
+ stack:o.stack||[r.language,...(r.topics||[])].filter(Boolean),
+ desc:o.desc||r.description||'Project details coming soon.',
+ live:o.live!==undefined?o.live:(r.homepage||''),git:r.html_url,
+ ch:o.ch||['Challenges will be added soon.'],fu:o.fu||['Future plans will be added soon.']}}
+const imgTag=p=>`<img src="${p.img}" alt="${p.name} screenshot" loading="lazy" onerror="this.onerror=null;this.src='${p.fb}'">`;
+function grid(){document.getElementById('projGrid').innerHTML=P.length?P.map(p=>`<article class="pc">${imgTag(p)}<div><h3>${p.name}</h3><p>${p.short}</p><a class="btn p" href="#${p.id}">View Details</a></div></article>`).join(''):'<p>Loading projects from GitHub...</p>'}
+async function load(){grid();
+ try{const res=await fetch('https://api.github.com/users/'+USER+'/repos?per_page=100&sort=updated');
+  if(!res.ok)throw 0;const rs=(await res.json()).filter(r=>!r.fork&&!SKIP.includes(r.name));
+  P=rs.map(build);if(P.length)grid();else document.getElementById('projGrid').innerHTML='<p>No public projects yet.</p>';
+ }catch(e){document.getElementById('projGrid').innerHTML='<p>Could not load projects right now. Visit my <a href="https://github.com/'+USER+'">GitHub</a>.</p>'}
+ route()}
+const S={Frontend:[['HTML & CSS',90],['JavaScript',80],['React',78],['Next.js',75],['Tailwind CSS',85]],
+Backend:[['Node.js',70],['Express',68],['MongoDB',72],['Authentication (BetterAuth)',70]],
+Cybersecurity:[['Web App Security (OWASP Top 10)',75],['Network Security',65],['Ethical Hacking Basics',65],['Cryptography',60],['Linux & Terminal',70],['Burp Suite / Wireshark',60]],
+Tools:[['Git & GitHub',80],['VS Code',90],['Vercel',75],['Figma',60]]};
+document.getElementById('skillBox').innerHTML=Object.entries(S).map(([k,v])=>`<div class="box"><h3>${k}</h3>${v.map(([n,p])=>`<div class="sk"><div><span>${n}</span><span>${p}%</span></div><div class="bar"><i style="width:${p}%"></i></div></div>`).join('')}</div>`).join('');
+const li=a=>a.map(x=>`<li>${x}</li>`).join('');
+function route(){
+ const id=location.hash.slice(1),p=P.find(x=>x.id===id);
+ if(p){document.body.classList.add('d');
+  document.getElementById('detailBox').innerHTML=`<a class="btn" href="#projects">&larr; Back to projects</a><h2 style="margin-top:22px">${p.name}</h2><img class="shot" src="${p.img}" alt="${p.name}" onerror="this.onerror=null;this.src='${p.fb}'"><h3>Main technology stack</h3><div class="chips">${p.stack.map(s=>`<span>${s}</span>`).join('')}</div><h3>Description</h3><p>${p.desc}</p><div class="row">${p.live?`<a class="btn p" href="${p.live}" target="_blank" rel="noopener">Live project</a>`:""}<a class="btn" href="${p.git}" target="_blank" rel="noopener">GitHub (client)</a></div><h3>Challenges faced</h3><ul>${li(p.ch)}</ul><h3>Future plans</h3><ul>${li(p.fu)}</ul>`;
+  scrollTo(0,0);
+ }else{const was=document.body.classList.contains('d');document.body.classList.remove('d');
+  if(was){const el=id&&document.getElementById(id);setTimeout(()=>el?el.scrollIntoView():scrollTo(0,0),0)}}
+ document.getElementById('links').classList.remove('open');
+}
+addEventListener('hashchange',route);load();
+document.getElementById('menu').onclick=()=>document.getElementById('links').classList.toggle('open');
+</script>
+</body>
+</html>
